@@ -113,10 +113,10 @@ def getRepostRoute():
             #只保留有坐标的地区
             if source not in geo_coord_map or target not in geo_coord_map:
                 continue
-            # 添加到节点集合
+            #添加到节点集合
             nodes_set.add(source)
             nodes_set.add(target)
-            # 添加到边列表
+            #添加到边列表
             edges.append({
                 "source": source,
                 "target": target,

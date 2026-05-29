@@ -96,7 +96,6 @@
                     const maps = Object.keys(echarts.maps || {});
                     throw new Error(`地图 'china' 未注册！已注册: [ ${maps.join(', ')} ]`);
                 }
-                console.log("地图资源准备就绪，开始渲染...");
 
                 if (myChart) {
                     myChart.dispose();
