@@ -12,7 +12,7 @@ from selenium.webdriver.edge.options import Options
 edge_options = Options()
 edge_options.binary_location = r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
 driver = webdriver.Edge(options=edge_options)
-'''微博登录网站'''
+#微博登录网站
 driver.get('https://passport.weibo.com/sso/signin')
 cookieStr = driver.get_cookies()
 oldCookie=cookieStr

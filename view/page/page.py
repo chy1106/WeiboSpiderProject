@@ -63,7 +63,7 @@ def hotWord():
     df = pd.read_csv('./fenci/comment_fre.csv', nrows=100)
     for value in df.values:
         hotwordList.append(value[0])
-    # 获取请求参数，如果没有获取到，给个默认值 第一个列表数据
+    # 获取请求参数默认值第一个列表数据
     defaultHotWord = request.args.get('word', default=hotwordList[0])
     hotwordNum = 0  # 出现次数
     for value in df.values:
@@ -105,7 +105,7 @@ def articleData():
         if article and article[1]:  # 确保article存在且content非空
             stc = SnowNLP(article[1]).sentiments
         else:
-            stc = 0.5  # 默认中性情感值，或根据业务需求调整
+            stc = 0.5  # 默认中性情感值
         if stc > 0.6:
             sentiments = '正面'
         elif stc < 0.2:
@@ -123,7 +123,7 @@ def articleDataAnalysis():
     df= pd.read_csv('./data/arcType_data.csv')
     for value in df.values:
         arcTypeList.append(value[0])
-    # 获取请求参数，如果没有获取到，给个默认值第一个列表数据
+    # 获取请求参数，默认值第一个列表数据
     defaultArcType = request.args.get('arcType', default=arcTypeList[0])
     print(defaultArcType)
     articleList = articleDao.getArticleByArcType(defaultArcType)
@@ -151,7 +151,7 @@ def articleDataAnalysis():
 
 @pb.route('/repostAnalysis')
 def repostAnalysis():
-     #获取请求参数，如果没有获取到，给个默认值第一个列表数据
+     #获取请求参数，默认值第一个列表数据
      ArcType = request.args.get('arcType', default='热门')
      print(ArcType)
      #转发路径图
@@ -258,7 +258,7 @@ def specificArticleData():
         if article and article[1]:  # 确保article存在且content非空
             stc = SnowNLP(article[1]).sentiments
         else:
-            stc = 0.5  # 默认中性情感值，或根据业务需求调整
+            stc = 0.5  # 默认中性情感值
         if stc > 0.6:
             sentiments = '正面'
         elif stc < 0.2:
