@@ -7,7 +7,7 @@ import os
 from bs4 import BeautifulSoup
 import requests
 
-#清空article_URL.csv文件中所有内容
+
 def clear_csv():
     with open("data/article_URL.csv", 'w', encoding='utf8') as f:
         f.truncate()
